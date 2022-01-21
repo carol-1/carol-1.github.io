@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="字符串的新增方法                           1.String.fromCodePoint()       用于从Unicode码点返回对应字符，能识别大于0xFFFF的字符                     2.String.raw()       如果原字符串的斜杠已经转义，那么String.raw()会进行再次转义。 12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="枯叶蝶的博客">
+<meta property="og:url" content="http://example.com/2022/01/21/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="枯叶蝶的博客">
+<meta property="og:description" content="字符串的新增方法                           1.String.fromCodePoint()       用于从Unicode码点返回对应字符，能识别大于0xFFFF的字符                     2.String.raw()       如果原字符串的斜杠已经转义，那么String.raw()会进行再次转义。 12">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-21T06:59:59.044Z">
+<meta property="article:modified_time" content="2022-01-21T07:19:08.092Z">
+<meta property="article:author" content="ZhengXiaoXiao">
+<meta name="twitter:card" content="summary"><title>[ Untitled ] | 枯叶蝶的博客</title><link ref="canonical" href="http://example.com/2022/01/21/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">枯叶蝶的博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[ Untitled ]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-21</span></span></div></header><div class="post-body">
+        <h1 id="字符串的新增方法"   >
+          <a href="#字符串的新增方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#字符串的新增方法" class="headerlink" title="字符串的新增方法"></a>字符串的新增方法</h1>
+      
+        <h4 id="1-String-fromCodePoint"   >
+          <a href="#1-String-fromCodePoint" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-String-fromCodePoint" class="headerlink" title="1.String.fromCodePoint()"></a>1.String.fromCodePoint()</h4>
+      <p>用于从Unicode码点返回对应字符，能识别大于0xFFFF的字符</p>
+
+        <h4 id="2-String-raw"   >
+          <a href="#2-String-raw" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-String-raw" class="headerlink" title="2.String.raw()"></a>2.String.raw()</h4>
+      <p>如果原字符串的斜杠已经转义，那么String.raw()会进行再次转义。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String.raw`Hi\\n`</span><br><span class="line">// 返回 &quot;Hi\\\\n&quot;</span><br><span class="line"></span><br><span class="line">String.raw`Hi\\n` === &quot;Hi\\\\n&quot; // true</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="3-实例方法-codePointAt"   >
+          <a href="#3-实例方法-codePointAt" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-实例方法-codePointAt" class="headerlink" title="3.实例方法: codePointAt()"></a>3.实例方法: codePointAt()</h4>
+      <p>ES6 提供了codePointAt()方法，能够正确处理 4 个字节储存的字符，返回一个字符的码点。</p>
+
+        <h4 id="4-实例方法-normalize"   >
+          <a href="#4-实例方法-normalize" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-实例方法-normalize" class="headerlink" title="4.实例方法: normalize()"></a>4.实例方法: normalize()</h4>
+      <p>ES6 提供字符串实例的normalize()方法，用来将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化。</p>
+
+        <h4 id="5-实例方法-includes-startsWith-endsWitd"   >
+          <a href="#5-实例方法-includes-startsWith-endsWitd" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-实例方法-includes-startsWith-endsWitd" class="headerlink" title="5.实例方法: includes(),startsWith(),endsWitd()"></a>5.实例方法: includes(),startsWith(),endsWitd()</h4>
+      <p>ES6 又提供了三种新方法。<br>includes()：返回布尔值，表示是否找到了参数字符串。<br>startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。<br>endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s = &#x27;Hello world!&#x27;;</span><br><span class="line"></span><br><span class="line">s.startsWith(&#x27;Hello&#x27;) // true</span><br><span class="line">s.endsWith(&#x27;!&#x27;) // true</span><br><span class="line">s.includes(&#x27;o&#x27;) // true</span><br></pre></td></tr></table></div></figure>
+<p>使用第二个参数n时，endsWith的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s = &#x27;Hello world!&#x27;;</span><br><span class="line"></span><br><span class="line">s.startsWith(&#x27;world&#x27;, 6) // true</span><br><span class="line">s.endsWith(&#x27;Hello&#x27;, 5) // true</span><br><span class="line">s.includes(&#x27;Hello&#x27;, 6) // false</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="6-实例方法：repeat"   >
+          <a href="#6-实例方法：repeat" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-实例方法：repeat" class="headerlink" title="6.实例方法：repeat()"></a>6.实例方法：repeat()</h4>
+      <p>repeat方法返回一个新字符串，表示将原字符串重复n次。</p>
+
+        <h4 id="7-实例方法：padStart-padEnd"   >
+          <a href="#7-实例方法：padStart-padEnd" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-实例方法：padStart-padEnd" class="headerlink" title="7.实例方法：padStart(),padEnd()"></a>7.实例方法：padStart(),padEnd()</h4>
+      <p>如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x27;x&#x27;.padStart(5, &#x27;ab&#x27;) // &#x27;ababx&#x27;</span><br><span class="line">&#x27;x&#x27;.padStart(4, &#x27;ab&#x27;) // &#x27;abax&#x27;</span><br><span class="line"></span><br><span class="line">&#x27;x&#x27;.padEnd(5, &#x27;ab&#x27;) // &#x27;xabab&#x27;</span><br><span class="line">&#x27;x&#x27;.padEnd(4, &#x27;ab&#x27;) // &#x27;xaba&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="8-实例方法-trimStart-trimEnd"   >
+          <a href="#8-实例方法-trimStart-trimEnd" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-实例方法-trimStart-trimEnd" class="headerlink" title="8.实例方法: trimStart().trimEnd()"></a>8.实例方法: trimStart().trimEnd()</h4>
+      <p>trimStart()消除字符串头部的空格，trimEnd()消除尾部的空格。它们返回的都是新字符串，不会修改原始字符串。</p>
+
+        <h4 id="9-实例方法-matchAll"   >
+          <a href="#9-实例方法-matchAll" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-实例方法-matchAll" class="headerlink" title="9.实例方法: matchAll()"></a>9.实例方法: matchAll()</h4>
+      <p>matchAll()方法返回一个正则表达式在当前字符串的所有匹配</p>
+
+        <h4 id="10-实例方法-replaceAll"   >
+          <a href="#10-实例方法-replaceAll" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-实例方法-replaceAll" class="headerlink" title="10.实例方法: replaceAll()"></a>10.实例方法: replaceAll()</h4>
+      <p>字符串的实例方法replace()只能替换第一个匹配<br>replaceAll()方法，可以一次性替换所有匹配。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x27;aabbcc&#x27;.replaceAll(&#x27;b&#x27;, &#x27;_&#x27;)</span><br><span class="line">// &#x27;aa__cc&#x27;</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="11-实例方法-at"   >
+          <a href="#11-实例方法-at" class="heading-link"><i class="fas fa-link"></i></a><a href="#11-实例方法-at" class="headerlink" title="11.实例方法: at()"></a>11.实例方法: at()</h4>
+      <p>at()方法接受一个整数作为参数，返回参数指定位置的字符，支持负索引（即倒数的位置）。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const str = &#x27;hello&#x27;;</span><br><span class="line">str.at(1) // &quot;e&quot;</span><br><span class="line">str.at(-1) // &quot;o&quot;</span><br></pre></td></tr></table></div></figure>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://example.com">ZhengXiaoXiao</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2022/01/21/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/">http://example.com/2022/01/21/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E6%A1%88%E4%BE%8B/"><span class="paginator-prev__text">[ Untitled ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">
+          字符串的新增方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-String-fromCodePoint"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">
+          1.String.fromCodePoint()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-String-raw"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">
+          2.String.raw()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-codePointAt"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">
+          3.实例方法: codePointAt()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-normalize"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">
+          4.实例方法: normalize()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-includes-startsWith-endsWitd"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">
+          5.实例方法: includes(),startsWith(),endsWitd()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%EF%BC%9Arepeat"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">
+          6.实例方法：repeat()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%EF%BC%9ApadStart-padEnd"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">
+          7.实例方法：padStart(),padEnd()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-trimStart-trimEnd"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">
+          8.实例方法: trimStart().trimEnd()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-matchAll"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">
+          9.实例方法: matchAll()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-replaceAll"><span class="toc-number">1.0.0.10.</span> <span class="toc-text">
+          10.实例方法: replaceAll()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-at"><span class="toc-number">1.0.0.11.</span> <span class="toc-text">
+          11.实例方法: at()</span></a></li></ol></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ZhengXiaoXiao</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

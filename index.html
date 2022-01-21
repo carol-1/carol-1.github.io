@@ -28,7 +28,230 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">枯叶蝶的博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/markdown%E8%AF%AD%E6%B3%95/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">枯叶蝶的博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/21/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-21</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="字符串的新增方法"   >
+          <a href="#字符串的新增方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#字符串的新增方法" class="headerlink" title="字符串的新增方法"></a>字符串的新增方法</h1>
+      
+        <h4 id="1-String-fromCodePoint"   >
+          <a href="#1-String-fromCodePoint" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-String-fromCodePoint" class="headerlink" title="1.String.fromCodePoint()"></a>1.String.fromCodePoint()</h4>
+      <p>用于从Unicode码点返回对应字符，能识别大于0xFFFF的字符</p>
+
+        <h4 id="2-String-raw"   >
+          <a href="#2-String-raw" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-String-raw" class="headerlink" title="2.String.raw()"></a>2.String.raw()</h4>
+      <p>如果原字符串的斜杠已经转义，那么String.raw()会进行再次转义。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String.raw`Hi\\n`</span><br><span class="line">// 返回 &quot;Hi\\\\n&quot;</span><br><span class="line"></span><br><span class="line">String.raw`Hi\\n` === &quot;Hi\\\\n&quot; // true</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="3-实例方法-codePointAt"   >
+          <a href="#3-实例方法-codePointAt" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-实例方法-codePointAt" class="headerlink" title="3.实例方法: codePointAt()"></a>3.实例方法: codePointAt()</h4>
+      <p>ES6 提供了codePointAt()方法，能够正确处理 4 个字节储存的字符，返回一个字符的码点。</p>
+
+        <h4 id="4-实例方法-normalize"   >
+          <a href="#4-实例方法-normalize" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-实例方法-normalize" class="headerlink" title="4.实例方法: normalize()"></a>4.实例方法: normalize()</h4>
+      <p>ES6 提供字符串实例的normalize()方法，用来将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化。</p>
+
+        <h4 id="5-实例方法-includes-startsWith-endsWitd"   >
+          <a href="#5-实例方法-includes-startsWith-endsWitd" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-实例方法-includes-startsWith-endsWitd" class="headerlink" title="5.实例方法: includes(),startsWith(),endsWitd()"></a>5.实例方法: includes(),startsWith(),endsWitd()</h4>
+      <p>ES6 又提供了三种新方法。<br>includes()：返回布尔值，表示是否找到了参数字符串。<br>startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。<br>endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s = &#x27;Hello world!&#x27;;</span><br><span class="line"></span><br><span class="line">s.startsWith(&#x27;Hello&#x27;) // true</span><br><span class="line">s.endsWith(&#x27;!&#x27;) // true</span><br><span class="line">s.includes(&#x27;o&#x27;) // true</span><br></pre></td></tr></table></div></figure>
+<p>使用第二个参数n时，endsWith的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s = &#x27;Hello world!&#x27;;</span><br><span class="line"></span><br><span class="line">s.startsWith(&#x27;world&#x27;, 6) // true</span><br><span class="line">s.endsWith(&#x27;Hello&#x27;, 5) // true</span><br><span class="line">s.includes(&#x27;Hello&#x27;, 6) // false</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="6-实例方法：repeat"   >
+          <a href="#6-实例方法：repeat" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-实例方法：repeat" class="headerlink" title="6.实例方法：repeat()"></a>6.实例方法：repeat()</h4>
+      <p>repeat方法返回一个新字符串，表示将原字符串重复n次。</p>
+
+        <h4 id="7-实例方法：padStart-padEnd"   >
+          <a href="#7-实例方法：padStart-padEnd" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-实例方法：padStart-padEnd" class="headerlink" title="7.实例方法：padStart(),padEnd()"></a>7.实例方法：padStart(),padEnd()</h4>
+      <p>如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x27;x&#x27;.padStart(5, &#x27;ab&#x27;) // &#x27;ababx&#x27;</span><br><span class="line">&#x27;x&#x27;.padStart(4, &#x27;ab&#x27;) // &#x27;abax&#x27;</span><br><span class="line"></span><br><span class="line">&#x27;x&#x27;.padEnd(5, &#x27;ab&#x27;) // &#x27;xabab&#x27;</span><br><span class="line">&#x27;x&#x27;.padEnd(4, &#x27;ab&#x27;) // &#x27;xaba&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="8-实例方法-trimStart-trimEnd"   >
+          <a href="#8-实例方法-trimStart-trimEnd" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-实例方法-trimStart-trimEnd" class="headerlink" title="8.实例方法: trimStart().trimEnd()"></a>8.实例方法: trimStart().trimEnd()</h4>
+      <p>trimStart()消除字符串头部的空格，trimEnd()消除尾部的空格。它们返回的都是新字符串，不会修改原始字符串。</p>
+
+        <h4 id="9-实例方法-matchAll"   >
+          <a href="#9-实例方法-matchAll" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-实例方法-matchAll" class="headerlink" title="9.实例方法: matchAll()"></a>9.实例方法: matchAll()</h4>
+      <p>matchAll()方法返回一个正则表达式在当前字符串的所有匹配</p>
+
+        <h4 id="10-实例方法-replaceAll"   >
+          <a href="#10-实例方法-replaceAll" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-实例方法-replaceAll" class="headerlink" title="10.实例方法: replaceAll()"></a>10.实例方法: replaceAll()</h4>
+      <p>字符串的实例方法replace()只能替换第一个匹配<br>replaceAll()方法，可以一次性替换所有匹配。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x27;aabbcc&#x27;.replaceAll(&#x27;b&#x27;, &#x27;_&#x27;)</span><br><span class="line">// &#x27;aa__cc&#x27;</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="11-实例方法-at"   >
+          <a href="#11-实例方法-at" class="heading-link"><i class="fas fa-link"></i></a><a href="#11-实例方法-at" class="headerlink" title="11.实例方法: at()"></a>11.实例方法: at()</h4>
+      <p>at()方法接受一个整数作为参数，返回参数指定位置的字符，支持负索引（即倒数的位置）。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const str = &#x27;hello&#x27;;</span><br><span class="line">str.at(1) // &quot;e&quot;</span><br><span class="line">str.at(-1) // &quot;o&quot;</span><br></pre></td></tr></table></div></figure>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E6%A1%88%E4%BE%8B/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-21</span></span></div></header><div class="post-body"><div class="post-excerpt"><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            width: 100px;
+            height: 100px;
+            border: 1px solid pink;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">点击切换颜色</h2>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <script>
+        //获取div元素对象
+        let items = document.querySelectorAll('.item');
+        //遍历并绑定事件
+        for (let i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                //修改背景颜色
+                //  this.style.background = 'pink'
+                items[i].style.background = 'pink'
+
+            }
+        }
+        const F4 = ['小沈阳', '刘能', '赵四', '宋小宝']
+        let [xiao, liu, zhao, song] = F4
+        //这是创建了四个变量分别将数组里的值赋值给变量
+        let str = ` <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+               </ul>`;
+        let arr1 = `第一个变量`
+        let arr2 = `${arr1}拼接了我`
+        console.log(arr2)
+
+        //rest参数
+        function date(...args) {
+            console.log(args);
+        }
+        date('a', 'b', 'c') //array(3)[a,b,c]
+
+        //扩展运算符
+        const array = ['易烊千玺', '王俊凯', '王源'];
+        console.log(...array) //易烊千玺 王俊凯 王源
+            //扩展运算符应用
+        const kuaizi = ['王太利', '小样']
+        const feng = ['零花', '增益']
+        const con = [...kuaizi, ...feng]
+        console.log(con) //['王太利', '小样', '零花', '增益']
+            // 2.数组的克隆
+        const a = ['123'];
+        const b = [...a];
+        console.log(b) //['123']
+            //3.将伪数组转为真正的数组
+            //symbol
+        let s = Symbol('尚硅谷');
+        let s2 = Symbol.for('尚硅谷');
+        //生成器
+        function* gen(arg) {
+            yield 111;
+            yield 222;
+            yield 333;
+        }
+    </script>
+</body>
+
+</html></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/es6%E5%AD%A6%E4%B9%A0/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-21</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="let和const命令"   >
+          <a href="#let和const命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h1>
+      <ol>
+<li>let命令</li>
+<li>块级作用域</li>
+<li>const命令</li>
+<li>顶层对象的属性</li>
+<li>globalThis对象</li>
+</ol>
+
+        <h3 id="1-let命令"   >
+          <a href="#1-let命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-let命令" class="headerlink" title="1.let命令"></a>1.let命令</h3>
+      <p>  特性：<br>  变量不能重复声明<br>  块级作用域：let用来声明变量，类似于Var,但是只在let命令所在的代码块内有效<br>  不存在变量提升，即变量不能在声明之前使用，会出现暂时性死区<br>  不影响作用域链效果</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//获取div元素对象</span><br><span class="line">       let items = document.querySelectorAll(&#x27;.item&#x27;);</span><br><span class="line">       //遍历并绑定事件</span><br><span class="line">       for (let i = 0; i &lt; items.length; i++) &#123;</span><br><span class="line">           items[i].onclick = function() &#123;</span><br><span class="line">               //修改背景颜色</span><br><span class="line">               //  this.style.background = &#x27;pink&#x27;</span><br><span class="line">               items[i].style.background = &#x27;pink&#x27;</span><br><span class="line">               //如果改为var i则变为全局变量这句话会报错</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="2-const常量"   >
+          <a href="#2-const常量" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-const常量" class="headerlink" title="2.const常量"></a>2.const常量</h3>
+      <p>特性：<br>   一定要赋初始值<br>   一般常量使用大写（潜规则）<br>   常量的值不能修改<br>   块级作用域<br>   对于数组和对象的元素修改，不算做对常量的修改，不会报错<br>   不存在变量提升<br>   保证变量指向的内存地址所保存的数据不得改动</p>
+
+        <h3 id="3-变量的解构赋值"   >
+          <a href="#3-变量的解构赋值" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-变量的解构赋值" class="headerlink" title="3.变量的解构赋值"></a>3.变量的解构赋值</h3>
+      <p>ES6允许按照一定模式从数组和对象中提取值，对变量进行赋值</p>
+
+        <h4 id="3-1-数组的结构"   >
+          <a href="#3-1-数组的结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-数组的结构" class="headerlink" title="3.1 数组的结构"></a>3.1 数组的结构</h4>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const F4 = [&#x27;小沈阳&#x27;, &#x27;刘能&#x27;, &#x27;赵四&#x27;, &#x27;宋小宝&#x27;]</span><br><span class="line">        let [xiao,liu,zhao,song] = F4</span><br><span class="line">        //这是创建了四个变量分别将数组里的值赋值给变量</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="3-2-对象的解构"   >
+          <a href="#3-2-对象的解构" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-对象的解构" class="headerlink" title="3.2 对象的解构"></a>3.2 对象的解构</h4>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const zhao = &#123;</span><br><span class="line">  name:&#x27;赵本山&#x27;，</span><br><span class="line">  age:&#x27;80&#x27;,</span><br><span class="line">  xiaopin: function()&#123;</span><br><span class="line">    console.log(&#x27;小品&#x27;)</span><br><span class="line">  &#125;;</span><br><span class="line">  let &#123;name,age,xiaopin&#125; = zhao</span><br><span class="line">  xiaopin()//这样使方法更加简便不用zhao.xiaopin()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="4-模板字符串"   >
+          <a href="#4-模板字符串" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-模板字符串" class="headerlink" title="4.模板字符串"></a>4.模板字符串</h3>
+      <p>ES6中引入新的声明字符串的方式</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let str=`我是一个字符串`</span><br></pre></td></tr></table></div></figure>
+<p>特性：<br>内容中可以直接出现换行符</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let str = ` &lt;ul&gt;</span><br><span class="line">             &lt;li&gt;1&lt;/li&gt;</span><br><span class="line">             &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">             &lt;li&gt;3&lt;/li&gt;</span><br><span class="line">             &lt;/ul&gt;`;</span><br></pre></td></tr></table></div></figure>
+<p>变量拼接</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr1 = `第一个变量`</span><br><span class="line">let arr2 = `$&#123;arr1&#125;拼接了我`</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="5-对象的简写方法"   >
+          <a href="#5-对象的简写方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-对象的简写方法" class="headerlink" title="5.对象的简写方法"></a>5.对象的简写方法</h3>
+      <p>ES6允许在大括号里面，直接写入变量和函数，作为对象的属性和方法</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let name=&#x27;111&#x27;</span><br><span class="line">let change = function()&#123;</span><br><span class="line">  console.log(&#x27;我是方法&#x27;)</span><br><span class="line">&#125;</span><br><span class="line">const school = &#123;</span><br><span class="line">  name,</span><br><span class="line">  change,</span><br><span class="line">  improve()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="6-箭头函数"   >
+          <a href="#6-箭头函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-箭头函数" class="headerlink" title="6.箭头函数"></a>6.箭头函数</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let fn = (a+b)=&gt; &#123;</span><br><span class="line">  return a+b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>特性：<br>this是静态的，this始终指向函数声明时所在作用域下的this的值。<br>不能作为构造函数实例化对象<br>不能使用arguments变量（保存实参）<br>箭头函数简写：当形参只有一个可以省略小括号，当代码体只有一条语句可以省略花括号，此时return必须省略，语句执行结果就是返回值<br>箭头函数适合与this无关的回调，定时器，数组的方法回调</p>
+
+        <h3 id="7-参数默认值设置"   >
+          <a href="#7-参数默认值设置" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-参数默认值设置" class="headerlink" title="7.参数默认值设置"></a>7.参数默认值设置</h3>
+      <p>ES6允许给函数参数设置初始值<br>形参初始值，一般具有默认值的参数，一般位置要靠后（潜规则）</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function add(a,b,c=10)&#123;</span><br><span class="line">  return a+b+c</span><br><span class="line">&#125;</span><br><span class="line">add(1,2)</span><br></pre></td></tr></table></div></figure>
+<p>与解构赋值结合</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function connect(&#123;host,username,password,port&#125;)&#123;</span><br><span class="line">  console.log(host)</span><br><span class="line">  console.log(username)</span><br><span class="line">  console.log(password)</span><br><span class="line">  console.log(port)</span><br><span class="line">&#125;</span><br><span class="line">connect(&#123;</span><br><span class="line">  host:&#x27;localhost&#x27;,</span><br><span class="line">  username:&#x27;root&#x27;,</span><br><span class="line">  password:&#x27;123456&#x27;</span><br><span class="line">  port:8888</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="8-rest参数"   >
+          <a href="#8-rest参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-rest参数" class="headerlink" title="8.rest参数"></a>8.rest参数</h3>
+      <p>rest参数用于获取函数的实参，用来代替arguments,必须放在参数最后</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function date(...args) &#123;</span><br><span class="line">    console.log(args);</span><br><span class="line">  &#125;</span><br><span class="line"> date(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;)//array(3)[a,b,c]</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="9-扩展运算符"   >
+          <a href="#9-扩展运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-扩展运算符" class="headerlink" title="9.扩展运算符"></a>9.扩展运算符</h3>
+      <p>[…]扩展运算符能将数组转换为逗号分隔的参数序列<br>应用：<br>1.数组的合并</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const kuaizi = [&#x27;王太利&#x27;, &#x27;小样&#x27;]</span><br><span class="line">const feng = [&#x27;零花&#x27;, &#x27;增益&#x27;]</span><br><span class="line">const con = [...kuaizi, ...feng]</span><br><span class="line">console.log(con)//[&#x27;王太利&#x27;, &#x27;小样&#x27;, &#x27;零花&#x27;, &#x27;增益&#x27;]</span><br></pre></td></tr></table></div></figure>
+<p>2.数组的克隆<br>是个浅拷贝</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const a = [&#x27;123&#x27;];</span><br><span class="line">const b = [...a];</span><br><span class="line">console.log(b) //[&#x27;123&#x27;]</span><br></pre></td></tr></table></div></figure>
+<p>3.将伪数组转为真正的数组</p>
+
+        <h3 id="10-symbol"   >
+          <a href="#10-symbol" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-symbol" class="headerlink" title="10.symbol"></a>10.symbol</h3>
+      <p>特点：<br>1.symbol的值是唯一的，用来解决命名冲突的问题<br>2.symbol值不能与其他数据进行运算<br>3.symbol定义的对象属性不能使用for …in 循环遍历，但是可以用Reflect.ownKeys来获取对象的所有键名</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let s = Symbol(&#x27;尚硅谷&#x27;);</span><br><span class="line">let s2 = Symbol.for(&#x27;尚硅谷&#x27;);</span><br></pre></td></tr></table></div></figure>
+<p>js的七个数据类型<br>USONB<br>u undefined<br>s symbol string<br>o object<br>n number<br>b boolean</p>
+<p>作用：给对象添加属性和方法</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[Symbol(&#x27;say&#x27;)]:function()&#123;&#125;</span><br><span class="line"></span><br><span class="line">methods:&#123;</span><br><span class="line">  up:Symbol()</span><br><span class="line">&#125;</span><br><span class="line">game[methods.up] = function()&#123;&#125;</span><br></pre></td></tr></table></div></figure>
+<p>symbol提供了11个内置方法</p>
+
+        <h3 id="11-迭代器"   >
+          <a href="#11-迭代器" class="heading-link"><i class="fas fa-link"></i></a><a href="#11-迭代器" class="headerlink" title="11.迭代器"></a>11.迭代器</h3>
+      <p>for…of遍历<br>原生具备iterator接口的数据<br>Array,Arguments,Set,Map,String,TypeArray,NodeList</p>
+
+        <h3 id="12-生成器"   >
+          <a href="#12-生成器" class="heading-link"><i class="fas fa-link"></i></a><a href="#12-生成器" class="headerlink" title="12.生成器"></a>12.生成器</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function * gen(arg) &#123;</span><br><span class="line">         yield 111;</span><br><span class="line">         yield 222;</span><br><span class="line">         yield 333;</span><br><span class="line">     &#125;</span><br><span class="line">let iterator = gen(&#x27;aaa&#x27;);</span><br><span class="line">interator.next(&#x27;BBB&#x27;);</span><br></pre></td></tr></table></div></figure>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/markdown%E8%AF%AD%E6%B3%95/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="一级标题"   >
           <a href="#一级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1>
       
@@ -68,5 +291,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 </li>
 </ul>
 <p><strong>加粗</strong><br><em>倾斜</em><br><em><strong>加粗和倾斜</strong></em></p>
+<p>hexo new “新建文章”<br>hexo new page “新建页面”<br>hexo generate 生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #部署到GitHub<br>hexo help  # 查看帮助<br>hexo version  #查看Hexo的版本<br>hexo s -g #生成并本地预览<br>hexo d -g #生成并上传</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/hello-world/">我的第一个博客</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-11-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-12-02</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>这是我的第一个博客，初次学习，web前端学习笔记用web技术写的，会实时更新，请大家多多指教~~</p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ZhengXiaoXiao</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ZhengXiaoXiao</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
