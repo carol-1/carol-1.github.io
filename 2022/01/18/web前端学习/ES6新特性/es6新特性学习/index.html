@@ -1,10 +1,14 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta property="og:type" content="website">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="let和const命令        let命令 块级作用域 const命令 顶层对象的属性 globalThis对象                      1.let命令         特性：  变量不能重复声明  块级作用域：let用来声明变量，类似于Var,但是只在let命令所在的代码块内有效  不存在变量提升，即变量不能在声明之前使用，会出现暂">
+<meta property="og:type" content="article">
 <meta property="og:title" content="枯叶蝶的博客">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/es6%E6%96%B0%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="枯叶蝶的博客">
+<meta property="og:description" content="let和const命令        let命令 块级作用域 const命令 顶层对象的属性 globalThis对象                      1.let命令         特性：  变量不能重复声明  块级作用域：let用来声明变量，类似于Var,但是只在let命令所在的代码块内有效  不存在变量提升，即变量不能在声明之前使用，会出现暂">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-18T11:35:15.791Z">
+<meta property="article:modified_time" content="2022-01-26T15:31:05.311Z">
 <meta property="article:author" content="ZhengXiaoXiao">
-<meta name="twitter:card" content="summary"><title>枯叶蝶的博客</title><link ref="canonical" href="http://example.com/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+<meta name="twitter:card" content="summary"><title>[ Untitled ] | 枯叶蝶的博客</title><link ref="canonical" href="http://example.com/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/es6%E6%96%B0%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -28,292 +32,7 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">枯叶蝶的博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/21/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-21</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="字符串的新增方法"   >
-          <a href="#字符串的新增方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#字符串的新增方法" class="headerlink" title="字符串的新增方法"></a>字符串的新增方法</h1>
-      
-        <h4 id="1-String-fromCodePoint"   >
-          <a href="#1-String-fromCodePoint" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-String-fromCodePoint" class="headerlink" title="1.String.fromCodePoint()"></a>1.String.fromCodePoint()</h4>
-      <p>用于从Unicode码点返回对应字符，能识别大于0xFFFF的字符</p>
-
-        <h4 id="2-String-raw"   >
-          <a href="#2-String-raw" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-String-raw" class="headerlink" title="2.String.raw()"></a>2.String.raw()</h4>
-      <p>如果原字符串的斜杠已经转义，那么String.raw()会进行再次转义。</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String.raw`Hi\\n`</span><br><span class="line">// 返回 &quot;Hi\\\\n&quot;</span><br><span class="line"></span><br><span class="line">String.raw`Hi\\n` === &quot;Hi\\\\n&quot; // true</span><br></pre></td></tr></table></div></figure>
-
-        <h4 id="3-实例方法-codePointAt"   >
-          <a href="#3-实例方法-codePointAt" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-实例方法-codePointAt" class="headerlink" title="3.实例方法: codePointAt()"></a>3.实例方法: codePointAt()</h4>
-      <p>ES6 提供了codePointAt()方法，能够正确处理 4 个字节储存的字符，返回一个字符的码点。</p>
-
-        <h4 id="4-实例方法-normalize"   >
-          <a href="#4-实例方法-normalize" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-实例方法-normalize" class="headerlink" title="4.实例方法: normalize()"></a>4.实例方法: normalize()</h4>
-      <p>ES6 提供字符串实例的normalize()方法，用来将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化。</p>
-
-        <h4 id="5-实例方法-includes-startsWith-endsWitd"   >
-          <a href="#5-实例方法-includes-startsWith-endsWitd" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-实例方法-includes-startsWith-endsWitd" class="headerlink" title="5.实例方法: includes(),startsWith(),endsWitd()"></a>5.实例方法: includes(),startsWith(),endsWitd()</h4>
-      <p>ES6 又提供了三种新方法。<br>includes()：返回布尔值，表示是否找到了参数字符串。<br>startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。<br>endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s = &#x27;Hello world!&#x27;;</span><br><span class="line"></span><br><span class="line">s.startsWith(&#x27;Hello&#x27;) // true</span><br><span class="line">s.endsWith(&#x27;!&#x27;) // true</span><br><span class="line">s.includes(&#x27;o&#x27;) // true</span><br></pre></td></tr></table></div></figure>
-<p>使用第二个参数n时，endsWith的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束。</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s = &#x27;Hello world!&#x27;;</span><br><span class="line"></span><br><span class="line">s.startsWith(&#x27;world&#x27;, 6) // true</span><br><span class="line">s.endsWith(&#x27;Hello&#x27;, 5) // true</span><br><span class="line">s.includes(&#x27;Hello&#x27;, 6) // false</span><br></pre></td></tr></table></div></figure>
-
-        <h4 id="6-实例方法：repeat"   >
-          <a href="#6-实例方法：repeat" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-实例方法：repeat" class="headerlink" title="6.实例方法：repeat()"></a>6.实例方法：repeat()</h4>
-      <p>repeat方法返回一个新字符串，表示将原字符串重复n次。</p>
-
-        <h4 id="7-实例方法：padStart-padEnd"   >
-          <a href="#7-实例方法：padStart-padEnd" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-实例方法：padStart-padEnd" class="headerlink" title="7.实例方法：padStart(),padEnd()"></a>7.实例方法：padStart(),padEnd()</h4>
-      <p>如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x27;x&#x27;.padStart(5, &#x27;ab&#x27;) // &#x27;ababx&#x27;</span><br><span class="line">&#x27;x&#x27;.padStart(4, &#x27;ab&#x27;) // &#x27;abax&#x27;</span><br><span class="line"></span><br><span class="line">&#x27;x&#x27;.padEnd(5, &#x27;ab&#x27;) // &#x27;xabab&#x27;</span><br><span class="line">&#x27;x&#x27;.padEnd(4, &#x27;ab&#x27;) // &#x27;xaba&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
-
-        <h4 id="8-实例方法-trimStart-trimEnd"   >
-          <a href="#8-实例方法-trimStart-trimEnd" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-实例方法-trimStart-trimEnd" class="headerlink" title="8.实例方法: trimStart().trimEnd()"></a>8.实例方法: trimStart().trimEnd()</h4>
-      <p>trimStart()消除字符串头部的空格，trimEnd()消除尾部的空格。它们返回的都是新字符串，不会修改原始字符串。</p>
-
-        <h4 id="9-实例方法-matchAll"   >
-          <a href="#9-实例方法-matchAll" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-实例方法-matchAll" class="headerlink" title="9.实例方法: matchAll()"></a>9.实例方法: matchAll()</h4>
-      <p>matchAll()方法返回一个正则表达式在当前字符串的所有匹配</p>
-
-        <h4 id="10-实例方法-replaceAll"   >
-          <a href="#10-实例方法-replaceAll" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-实例方法-replaceAll" class="headerlink" title="10.实例方法: replaceAll()"></a>10.实例方法: replaceAll()</h4>
-      <p>字符串的实例方法replace()只能替换第一个匹配<br>replaceAll()方法，可以一次性替换所有匹配。</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x27;aabbcc&#x27;.replaceAll(&#x27;b&#x27;, &#x27;_&#x27;)</span><br><span class="line">// &#x27;aa__cc&#x27;</span><br></pre></td></tr></table></div></figure>
-
-        <h4 id="11-实例方法-at"   >
-          <a href="#11-实例方法-at" class="heading-link"><i class="fas fa-link"></i></a><a href="#11-实例方法-at" class="headerlink" title="11.实例方法: at()"></a>11.实例方法: at()</h4>
-      <p>at()方法接受一个整数作为参数，返回参数指定位置的字符，支持负索引（即倒数的位置）。</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const str = &#x27;hello&#x27;;</span><br><span class="line">str.at(1) // &quot;e&quot;</span><br><span class="line">str.at(-1) // &quot;o&quot;</span><br></pre></td></tr></table></div></figure>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E6%A1%88%E4%BE%8B/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .item {
-            width: 100px;
-            height: 100px;
-            border: 1px solid pink;
-            float: left;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <h2 class="page-header">点击切换颜色</h2>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-    </div>
-
-    <script>
-        //获取div元素对象
-        let items = document.querySelectorAll('.item');
-        //遍历并绑定事件
-        for (let i = 0; i < items.length; i++) {
-            items[i].onclick = function() {
-                //修改背景颜色
-                //  this.style.background = 'pink'
-                items[i].style.background = 'pink'
-
-            }
-        }
-        const F4 = ['小沈阳', '刘能', '赵四', '宋小宝']
-        let [xiao, liu, zhao, song] = F4
-        //这是创建了四个变量分别将数组里的值赋值给变量
-        let str = ` <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-               </ul>`;
-        let arr1 = `第一个变量`
-        let arr2 = `${arr1}拼接了我`
-        console.log(arr2)
-
-        //rest参数
-        function date(...args) {
-            console.log(args);
-        }
-        date('a', 'b', 'c') //array(3)[a,b,c]
-
-        //扩展运算符
-        const array = ['易烊千玺', '王俊凯', '王源'];
-        console.log(...array) //易烊千玺 王俊凯 王源
-            //扩展运算符应用
-        const kuaizi = ['王太利', '小样']
-        const feng = ['零花', '增益']
-        const con = [...kuaizi, ...feng]
-        console.log(con) //['王太利', '小样', '零花', '增益']
-            // 2.数组的克隆
-        const a = ['123'];
-        const b = [...a];
-        console.log(b) //['123']
-            //3.将伪数组转为真正的数组
-            //symbol
-        let s = Symbol('尚硅谷');
-        let s2 = Symbol.for('尚硅谷');
-        //生成器
-        function* gen(arg) {
-                yield 111;
-                yield 222;
-                yield 333;
-            }
-            //实例化promise对象.对象有三个状态，初始化，成攻，失败
-            /*    const p = new Promise(function(resolve, reject) {
-                   setTimeout(function() {
-                       let data = '数据库中的用户数据'
-                       resolve(data);
-                   }, 1000)
-               });
-               //调用promise对象的then方法
-               p.then(function(value) {
-                   console.log(value) //数据库中的用户数据
-               }, function(reason) {
-
-               }) */
-            /*      const p = Promise(function(resolve, reject) {
-                     //创建对象
-                     const xhr = new XMLHttpRequest();
-                     //初始化
-                     xhr.open("GET", "http://api.apiopen.top/getJoken");
-                     //发送请求
-                     xhr.send();
-                     //处理响应结果
-                     xhr.onreadystatechange = function() {
-                         if (xhr.readyState === 4) {
-                             if (xhr.status >= 200 && xhr.status < 300) {
-                                 resolve(xhr.response);
-                             } else {
-                                 reject(xhr.status)
-                             }
-                         }
-                     }
-                 })
-                 p.then(function(value) {
-                         console.log(value)
-                     }, function(reason) {
-                         console.error(reason)
-                     }) */
-            //let集合实例
-            //数组去重
-        let arr = [1, 2, 3, 4, 5, 6, 3, 4, 32, 1];
-        let result = [...new Set(arr)]
-        console.log(result) // [1, 2, 3, 4, 5, 6, 32]
-            //交集
-        let arr9 = [1, 2, 5, 8, 9, 33];
-        let result2 = [...new Set(arr)].filter(item => {
-            let s2 = new Set(arr9);
-            if (s2.has(item)) {
-                return true;
-            } else {
-                return false;
-            }
-        })
-        console.log(result2)
-            //并集
-        let union = new Set([...arr, ...arr9]);
-        console.log(union)
-            //class方法
-            //es5的方法
-        function Phone(brand, price) {
-            this.brand = brand;
-            this.price = price;
-        }
-        //添加方法
-        Phone.prototype.call = function() {
-                console.log('我可以打电话')
-            }
-            //实例化对象
-        let Huawei = new Phone('华为', 5999)
-        Huawei.call()
-        console.log(Huawei)
-            //es6方法
-        class Phone {
-            //构造方法
-            //这个是不能改变的名字，实例化对象时会自动调用这个方法
-            constructor(brand, price) {
-                    this.brand = brand;
-                    this.price = price;
-
-                }
-                //添加方法
-            call() {
-                console.log('我可以打电话')
-            }
-
-        }
-        let onePlus = new Phone('1+', 1999);
-        console.log(onePlus);
-        //静态成员
-        //es5实现，实例对象和函数对象属性不通
-        console.log(Huawei.call()) //报错
-
-        //es6，对于static标准的属性和方法，属于类不属于对象
-        class Phone {
-            //静态属性
-            static name = "手机";
-            static change() {
-                console.log("我可以改变世界")
-            }
-        }
-        let test = new Phone();
-        console.log(test.name) //undefined
-        console.log(phone.name) //手机
-
-
-
-        //对象继承
-        //es5
-        //子类
-        function sonPhone(brand, price, color, size) {
-            Phone.call(this, brand, price)
-            this.color = color;
-            this.size = size
-        }
-        //设置子集构造函数的原型
-        sonPhone.prototype = new Phone
-        sonPhone.prototype.constructor = sonPhone; //校正
-        //声明子类方法
-        sonPhone.prototype.photo = function() {
-            console.log('我是一个方法')
-        }
-
-        //es6的继承方法
-        class sonPhone extends Phone {
-            //构造方法
-            constructor(brand, price, color, size) {
-                super(brand, price) //子类调用父类初始化方法
-                this.color = color
-                this.size = size
-            }
-            photo() {
-                console.log('我是es6一个方法')
-            }
-        }
-        const xiaomi = new sonPhone('小米', 7999, '黑色', '4.7')
-        xiaomi.photo()
-        xiaomi.call()
-
-        //get和set方法
-        class Phone {
-            get Price() {
-                console.log('价格属性被读取了')
-                return '111'
-            }
-            set Price(newVal) {
-                console.log('价格属性被修改了')
-            }
-        }
-        //实例化对象
-        let s = new Phone();
-        console.log(s.price) //111
-        s.price = 'free' //此时控制台输出价格属性被修改了
-    </script>
-</body>
-
-</html></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/es6%E6%96%B0%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">枯叶蝶的博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[ Untitled ]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-26</span></span></div></header><div class="post-body">
         <h1 id="let和const命令"   >
           <a href="#let和const命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h1>
       <ol>
@@ -475,46 +194,27 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 </ul>
 <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">m1.js文件</span><br><span class="line">//分别暴露</span><br><span class="line">export let school = &#x27;尚硅谷&#x27;</span><br><span class="line">export function teach()&#123;</span><br><span class="line">  console.log(&#x27;我可以被你调用啦&#x27;)</span><br><span class="line">&#125;</span><br><span class="line">//统一暴露export&#123;school,teach&#125;</span><br><span class="line">//默认暴露export default&#123;school:&#x27;ATGUIGU&#x27;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">index.html文件</span><br><span class="line">&lt;script type = &quot;moudle&quot;&gt;</span><br><span class="line">//引入m1.js模块内容</span><br><span class="line">//通用导入方式</span><br><span class="line">import * as m1 from &quot;./m1.js&quot;</span><br><span class="line">//解构赋值模式</span><br><span class="line">import &#123;school,teach&#125; from &quot;./m1.js&quot;</span><br><span class="line">//默认导入</span><br><span class="line">import &#123;default as m3&#125; from &quot;./m1.js&quot;</span><br><span class="line">//默认暴露简写方法</span><br><span class="line">import m3 from &quot;m1.js&quot;</span><br><span class="line"></span><br><span class="line">console.log(m1)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></div></figure>
 <p>babel是一个 JavaScript 编译器,为了照顾ie兼容性的问题</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/markdown%E8%AF%AD%E6%B3%95/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="一级标题"   >
-          <a href="#一级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1>
-      
-        <h2 id="二级标题"   >
-          <a href="#二级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2>
-      
-        <h3 id="三级标题"   >
-          <a href="#三级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3>
-      
-        <h4 id="四级标题"   >
-          <a href="#四级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4>
-      
-        <h5 id="五级标题"   >
-          <a href="#五级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5>
-      
-        <h6 id="六级标题"   >
-          <a href="#六级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6>
-      <p>正文直接输入</p>
-<p>换行在代码中空一行</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show 代码</span><br></pre></td></tr></table></div></figure>
-
-<p>正文中的代码通过<code>显示</code></p>
-<p>有序列表</p>
-<ol>
-<li>111</li>
-<li>222</li>
-<li>333</li>
-</ol>
-<p>无序列表</p>
-<ul>
-<li>qqq<ul>
-<li>www<ul>
-<li>qqq</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>加粗</strong><br><em>倾斜</em><br><em><strong>加粗和倾斜</strong></em></p>
-<p>hexo new “新建文章”<br>hexo new page “新建页面”<br>hexo generate 生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #部署到GitHub<br>hexo help  # 查看帮助<br>hexo version  #查看Hexo的版本<br>hexo s -g #生成并本地预览<br>hexo d -g #生成并上传</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/hello-world/">我的第一个博客</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-11-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-12-02</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>这是我的第一个博客，初次学习，web前端学习笔记用web技术写的，会实时更新，请大家多多指教~~</p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ZhengXiaoXiao</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://example.com">ZhengXiaoXiao</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/es6%E6%96%B0%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/">http://example.com/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/es6%E6%96%B0%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E6%A1%88%E4%BE%8B/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">[ Untitled ]</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/markdown%E8%AF%AD%E6%B3%95/"><span class="paginator-prev__text">[ Untitled ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#let%E5%92%8Cconst%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">
+          let和const命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-let%E5%91%BD%E4%BB%A4"><span class="toc-number">1.0.1.</span> <span class="toc-text">
+          1.let命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-const%E5%B8%B8%E9%87%8F"><span class="toc-number">1.0.2.</span> <span class="toc-text">
+          2.const常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-number">1.0.3.</span> <span class="toc-text">
+          3.变量的解构赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E6%95%B0%E7%BB%84%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">
+          3.1 数组的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%A7%A3%E6%9E%84"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">
+          3.2 对象的解构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.0.4.</span> <span class="toc-text">
+          4.模板字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E5%86%99%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.5.</span> <span class="toc-text">
+          5.对象的简写方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.6.</span> <span class="toc-text">
+          6.箭头函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.0.7.</span> <span class="toc-text">
+          7.参数默认值设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-rest%E5%8F%82%E6%95%B0"><span class="toc-number">1.0.8.</span> <span class="toc-text">
+          8.rest参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.9.</span> <span class="toc-text">
+          9.扩展运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-symbol"><span class="toc-number">1.0.10.</span> <span class="toc-text">
+          10.symbol</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-number">1.0.11.</span> <span class="toc-text">
+          11.迭代器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-number">1.0.12.</span> <span class="toc-text">
+          12.生成器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-Promise"><span class="toc-number">1.0.13.</span> <span class="toc-text">
+          13.Promise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-set"><span class="toc-number">1.0.14.</span> <span class="toc-text">
+          14.set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-Map"><span class="toc-number">1.0.15.</span> <span class="toc-text">
+          15.Map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-Math%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-number">1.0.16.</span> <span class="toc-text">
+          16.Math的扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-class%E7%B1%BB"><span class="toc-number">1.0.17.</span> <span class="toc-text">
+          17.class类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E6%95%B0%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-number">1.0.18.</span> <span class="toc-text">
+          17.数值的扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-number">1.0.19.</span> <span class="toc-text">
+          18.对象方法的扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">1.0.20.</span> <span class="toc-text">
+          19.模块化</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ZhengXiaoXiao</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

@@ -6,7 +6,7 @@
 <meta property="og:description" content="Document              .item {             width: 100px;             height: 100px;             border: 1px solid pink;             float: left;         }                      点击">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-18T12:25:22.652Z">
-<meta property="article:modified_time" content="2022-01-21T09:36:16.093Z">
+<meta property="article:modified_time" content="2022-01-26T14:49:18.299Z">
 <meta property="article:author" content="ZhengXiaoXiao">
 <meta name="twitter:card" content="summary"><title>[ Untitled ] | 枯叶蝶的博客</title><link ref="canonical" href="http://example.com/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E6%A1%88%E4%BE%8B/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
 var CONFIG = {
@@ -32,7 +32,7 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">枯叶蝶的博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[ Untitled ]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-21</span></span></div></header><div class="post-body"><!DOCTYPE html>
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">枯叶蝶的博客</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[ Untitled ]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-01-26</span></span></div></header><div class="post-body"><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -106,11 +106,161 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
         let s2 = Symbol.for('尚硅谷');
         //生成器
         function* gen(arg) {
-            yield 111;
-            yield 222;
-            yield 333;
+                yield 111;
+                yield 222;
+                yield 333;
+            }
+            //实例化promise对象.对象有三个状态，初始化，成攻，失败
+            /*    const p = new Promise(function(resolve, reject) {
+                   setTimeout(function() {
+                       let data = '数据库中的用户数据'
+                       resolve(data);
+                   }, 1000)
+               });
+               //调用promise对象的then方法
+               p.then(function(value) {
+                   console.log(value) //数据库中的用户数据
+               }, function(reason) {
+
+               }) */
+            /*      const p = Promise(function(resolve, reject) {
+                     //创建对象
+                     const xhr = new XMLHttpRequest();
+                     //初始化
+                     xhr.open("GET", "http://api.apiopen.top/getJoken");
+                     //发送请求
+                     xhr.send();
+                     //处理响应结果
+                     xhr.onreadystatechange = function() {
+                         if (xhr.readyState === 4) {
+                             if (xhr.status >= 200 && xhr.status < 300) {
+                                 resolve(xhr.response);
+                             } else {
+                                 reject(xhr.status)
+                             }
+                         }
+                     }
+                 })
+                 p.then(function(value) {
+                         console.log(value)
+                     }, function(reason) {
+                         console.error(reason)
+                     }) */
+            //let集合实例
+            //数组去重
+        let arr = [1, 2, 3, 4, 5, 6, 3, 4, 32, 1];
+        let result = [...new Set(arr)]
+        console.log(result) // [1, 2, 3, 4, 5, 6, 32]
+            //交集
+        let arr9 = [1, 2, 5, 8, 9, 33];
+        let result2 = [...new Set(arr)].filter(item => {
+            let s2 = new Set(arr9);
+            if (s2.has(item)) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        console.log(result2)
+            //并集
+        let union = new Set([...arr, ...arr9]);
+        console.log(union)
+            //class方法
+            //es5的方法
+        function Phone(brand, price) {
+            this.brand = brand;
+            this.price = price;
         }
+        //添加方法
+        Phone.prototype.call = function() {
+                console.log('我可以打电话')
+            }
+            //实例化对象
+        let Huawei = new Phone('华为', 5999)
+        Huawei.call()
+        console.log(Huawei)
+            //es6方法
+        class Phone {
+            //构造方法
+            //这个是不能改变的名字，实例化对象时会自动调用这个方法
+            constructor(brand, price) {
+                    this.brand = brand;
+                    this.price = price;
+
+                }
+                //添加方法
+            call() {
+                console.log('我可以打电话')
+            }
+
+        }
+        let onePlus = new Phone('1+', 1999);
+        console.log(onePlus);
+        //静态成员
+        //es5实现，实例对象和函数对象属性不通
+        console.log(Huawei.call()) //报错
+
+        //es6，对于static标准的属性和方法，属于类不属于对象
+        class Phone {
+            //静态属性
+            static name = "手机";
+            static change() {
+                console.log("我可以改变世界")
+            }
+        }
+        let test = new Phone();
+        console.log(test.name) //undefined
+        console.log(phone.name) //手机
+
+
+
+        //对象继承
+        //es5
+        //子类
+        function sonPhone(brand, price, color, size) {
+            Phone.call(this, brand, price)
+            this.color = color;
+            this.size = size
+        }
+        //设置子集构造函数的原型
+        sonPhone.prototype = new Phone
+        sonPhone.prototype.constructor = sonPhone; //校正
+        //声明子类方法
+        sonPhone.prototype.photo = function() {
+            console.log('我是一个方法')
+        }
+
+        //es6的继承方法
+        class sonPhone extends Phone {
+            //构造方法
+            constructor(brand, price, color, size) {
+                super(brand, price) //子类调用父类初始化方法
+                this.color = color
+                this.size = size
+            }
+            photo() {
+                console.log('我是es6一个方法')
+            }
+        }
+        const xiaomi = new sonPhone('小米', 7999, '黑色', '4.7')
+        xiaomi.photo()
+        xiaomi.call()
+
+        //get和set方法
+        class Phone {
+            get Price() {
+                console.log('价格属性被读取了')
+                return '111'
+            }
+            set Price(newVal) {
+                console.log('价格属性被修改了')
+            }
+        }
+        //实例化对象
+        let s = new Phone();
+        console.log(s.price) //111
+        s.price = 'free' //此时控制台输出价格属性被修改了
     </script>
 </body>
 
-</html></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://example.com">ZhengXiaoXiao</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E6%A1%88%E4%BE%8B/">http://example.com/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E6%A1%88%E4%BE%8B/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/01/21/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">[ Untitled ]</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/es6%E5%AD%A6%E4%B9%A0/"><span class="paginator-prev__text">[ Untitled ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">点击切换颜色</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ZhengXiaoXiao</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+</html></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://example.com">ZhengXiaoXiao</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E6%A1%88%E4%BE%8B/">http://example.com/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E6%A1%88%E4%BE%8B/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/01/21/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">[ Untitled ]</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/01/18/web%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%E6%96%B0%E7%89%B9%E6%80%A7/es6%E6%96%B0%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/"><span class="paginator-prev__text">[ Untitled ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">点击切换颜色</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ZhengXiaoXiao</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
